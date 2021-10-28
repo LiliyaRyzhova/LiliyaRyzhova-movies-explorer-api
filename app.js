@@ -16,8 +16,8 @@ const app = express();
 const { PORT = 3000, MONGO_URI = 'mongodb://localhost:27017/bitfilmsdb' } = process.env;
 
 app.use(cors({
-  // origin: ['https://mesto.rls.nomoredomains.club', 'http://mesto.rls.nomoredomains.club'],
-  // credentials: true,
+  origin: ['https://api.movie.nomoredomains.monster', 'http://api.movie.nomoredomains.monster', 'localhost:3000'],
+  credentials: true,
 }));
 
 app.use(helmet());
