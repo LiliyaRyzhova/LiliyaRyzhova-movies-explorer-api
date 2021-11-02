@@ -11,8 +11,17 @@ module.exports.getMovies = (req, res, next) => {
 
 module.exports.createMovie = (req, res, next) => {
   const {
-    country, director, duration, year, description, image,
-    trailer, nameRU, nameEN, thumbnail, movieId,
+    country,
+    director,
+    duration,
+    year,
+    description,
+    image,
+    trailer,
+    nameRu, nameEn,
+    thumbnail,
+    movieId,
+
   } = req.body;
 
   Movie.create({
@@ -23,26 +32,14 @@ module.exports.createMovie = (req, res, next) => {
     description,
     image,
     trailer,
-    nameRU,
-    nameEN,
+    nameRu,
+    nameEn,
     thumbnail,
+    owner: req.user._id,
     movieId,
+
   })
-    .then((user) => res.status(200).send({
-      data: {
-        country: user.country,
-        director: user.director,
-        duration: user.duration,
-        year: user.year,
-        description: user.description,
-        image: user.image,
-        trailer: user.trailer,
-        nameRu: user.nameRu,
-        nameEN: user.nameEN,
-        thumbnail: user.thumbnail,
-        movieId: user.movieId,
-      },
-    }))
+    .then((movie) => res.status(200).send(movie))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new ValidationError('Некорректные данные');
@@ -54,17 +51,24 @@ module.exports.createMovie = (req, res, next) => {
 };
 
 module.exports.deleteMovie = (req, res, next) => {
-  Movie.findById(req.params.movieId)
-    .orFail(() => {
-      throw new NotFoundError('Фильм не найден');
+  const { id } = req.params;
+  const currentUser = req.user._id;
+  Movie.findById(id)
+    .then((movie) => {
+      const owner = movie.owner.toString();
+      if (owner !== currentUser) {
+        next(new ForbiddenError('Недостаточно прав для удления фильма'));
+      }
+      return movie;
     })
     .then((movie) => {
-      if (!movie || movie.owner.toString() !== req.user._id) {
-        throw new ForbiddenError('Недостаточно прав для удаления карточки');
-      } else {
-        Movie.deleteOne(movie)
-          .then(() => res.status(200).send(movie));
-      }
+      Movie.findOneAndRemove({ _id: movie._id })
+        .then((userMovie) => {
+          res.send(userMovie);
+        })
+        .catch(next);
     })
-    .catch(next);
+    .catch(() => {
+      next(new NotFoundError('Фильм не найден'));
+    });
 };

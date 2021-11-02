@@ -17,7 +17,11 @@ module.exports.createUser = (req, res, next) => {
     .then((hash) => User.create({
       email, name, password: hash,
     })
-      .then((user) => res.status(200).send(user))
+      .then((user) => res.status(200).send({
+        _id: user._id,
+        email: user.email,
+        name: user.name,
+      }))
       .catch((err) => {
         if (err.name === 'MongoServerError' || err.code === 11000) {
           next(new ConflictError('Пользователь с таким email уже зарегистрирован'));
@@ -50,6 +54,8 @@ module.exports.updateUser = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new ValidationError('Некорректные данные');
+      } else if (err.name === 'MongoError' && err.code === 11000) {
+        next(new ConflictError('Такой email уже зарегистрирован'));
       } else {
         next(err);
       }
@@ -89,4 +95,19 @@ module.exports.login = (req, res, next) => {
         .send({ token });
     })
     .catch((err) => next(new UnauthorizedError(`Произошла ошибка: ${err.message}`)));
+};
+
+module.exports.clearCookie = (req, res, next) => {
+  const token = req.cookies.jwt;
+  if (!token) {
+    next(new UnauthorizedError('Jwt не найден в Cookies'));
+  } else {
+    res
+      .status(202)
+      .clearCookie('jwt', {
+        sameSite: 'None',
+        secure: true,
+      })
+      .send({ success: 'Cookies удалены' });
+  }
 };
