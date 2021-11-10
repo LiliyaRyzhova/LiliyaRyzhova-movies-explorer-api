@@ -1,0 +1,33 @@
+.input-item{
+	display: flex;
+	flex-direction: column;
+	width: 396px;
+	margin-top: 20px;
+}
+
+.input-item__name{
+	font-size: 10px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 12px;
+	color: #A0A0A0;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.input-item__field{
+	border-style: none;
+	height: 46px;
+	background-color: #F9F9F9;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 400;
+	padding-left: 10px;
+	outline: none;
+	}
+
+@media screen and (max-width: 320px){
+	.input-item{
+		width: 260px;
+	}
+}

@@ -1,0 +1,16 @@
+.movies-section{
+	max-width: 1140px;
+	margin: auto;
+}
+
+@media screen and (max-width: 768px){
+	.movies-section{
+		max-width: 708px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.movies-section{
+		max-width: 300px;
+	}
+}

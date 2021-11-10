@@ -1,0 +1,137 @@
+.about{
+	max-width: 1140px;
+	margin: auto;
+ padding: 70px 0 110px 0;
+}
+
+.about__container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.about__container-part{
+	max-width: 550px;
+}
+
+.about__header{
+	font-size:20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24,2px;
+	margin-bottom: 26px;
+}
+
+.about__description{
+	font-size: 14px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 20px;
+}
+
+.about__illustration{
+	max-width: 100%;
+	display: flex;
+	padding-top: 110px;
+}
+
+.about__rectangle-1{
+	width: 20%;
+	height: 36px;
+	background-color: #2BE080;
+	margin: 0;
+	padding: 0;
+	}
+
+	.about__rectangle-2{
+	width: 80%;
+	height: 36px;
+	background-color: #F2F2F2;
+	margin: 0;
+	padding: 0;
+	}
+
+.about__text{
+	text-align: center;
+	margin: 9px 0 9px 0;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 17px;
+}
+
+.about__captions{
+	max-width: 100%;
+	display: flex;
+	padding-top: 14px;
+
+}
+
+.about__caption{
+	font-style: normal;
+	font-size:14px;
+	font-weight: 400;
+	line-height: 17px;
+	color: #A0A0A0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 20%;
+}
+
+.about__caption:nth-child(2){
+	width: 80%;
+}
+
+@media screen and (max-width: 768px){
+	.about{
+   max-width: 668px;
+			padding-bottom: 90px;
+	}
+	.about__container-part{
+		width: 319px;
+	}
+	.about__description{
+		font-size: 12px;
+		line-height: 18px;
+	}
+	.about__illustration{
+		padding-top: 93px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.about{
+		max-width: 284px;
+		padding: 60px 0 69px 0;
+	}
+	.about__container{
+		flex-direction: column;
+	}
+	.about__container-part{
+		max-width: 284px;
+	}
+	.about__header{
+		font-size: 18px;
+		line-height: 22px;
+		margin: 0;
+		padding-bottom: 16px;
+	}
+	.about__description{
+		font-size: 11px;
+		line-height: 16px;
+		margin: 0;
+		padding-bottom: 56px;
+	}
+	.about__text{
+		font-size: 11px;
+		line-height: 16px;
+	}
+	.about__caption{
+		font-size: 11px;
+		line-height: 16px;
+	}
+	.about__illustration{
+		padding-top: 4px;
+	}
+}

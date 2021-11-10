@@ -1,0 +1,89 @@
+.card{
+	width: 270px;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.card__film-image{
+	width: 100%;
+}
+
+.card__info{
+	width: 100%;
+	height: 46px;
+	margin-top: 14px;
+	display: flex;
+	justify-content: space-between;
+	align-items: top;
+	border-bottom: 1px solid #E8E8E8;
+	padding:0;
+}
+
+.card__name{
+	width: 226px;
+	font-size: 13px;
+	line-height: 15,7px;
+	font-style: normal;
+	font-weight: 500;
+	text-align: left;
+	margin: 0;
+}
+
+.card__button{
+	border-style: none;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: transparent;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	transition: opacity .3s ease-in-out;
+}
+
+.card__button_like{
+	background-image: url(../../images/like.svg);
+}
+
+.card__button_like:hover{
+	cursor: pointer;
+}
+
+.card__button_like_active{
+	background-image: url(../../images/likeActive.svg);
+}
+
+.card__button_remove{
+	background-image: url(../../images/remove.svg);
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+}
+
+.card__button_remove:hover{
+	/* background-image: url(../../images/remove.svg); */
+	opacity: 1;
+	cursor: pointer;
+	transition: opacity .3s ease-in-out;
+}
+
+.card__film-duration{
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 13,3px;
+	color: #A0A0A0;
+	text-align: left;
+	margin-top: 6px;
+}
+
+@media screen and (max-width: 768px){
+	.card{
+		width: 339px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.card{
+		width: 300px;
+	}
+}
