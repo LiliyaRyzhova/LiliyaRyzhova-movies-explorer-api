@@ -1,5 +1,6 @@
 .tech{
-  background-color:#F5F5F5;
+  background-color:#272727;
+		color: #ffffff;
   max-width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -47,6 +48,16 @@
 	}
 	.tech__list{
 		width: 648px;
+	}
+}
+
+@media screen and (max-width: 655px){
+	.tech__list{
+		max-width: 290px;
+	 display: grid;
+		grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+		grid-gap: 10px;
 	}
 }
 

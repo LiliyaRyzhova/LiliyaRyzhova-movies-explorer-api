@@ -10,7 +10,7 @@ function SavedMovies(props){
 
 	return(
    <section className="saved-movies">
-				<Header />
+				<Header color='black'/>
 				<SearchForm />
 				<MoviesCardList />
 				<Footer />

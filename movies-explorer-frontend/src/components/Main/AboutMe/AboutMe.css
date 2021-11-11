@@ -4,6 +4,7 @@
 	padding: 60px 0 0 0;
 	display: flex;
 	justify-content: space-between;
+	color: #ffffff;
 }
 
 .student__info{
@@ -34,8 +35,8 @@
 .student__description{
 	display: flex;
 	align-content: flex-start;
-	font-size: 18px;
-	line-height: 20px;
+	font-size: 14px;
+	line-height: 22px;
  padding: 26px 0 0 0;
 	margin: 0;
 	text-align: left;
@@ -46,7 +47,6 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-
 }
 
 .student__list-item{
@@ -54,7 +54,7 @@
 	padding-right: 20px;
 	font-size: 14px;
 	line-height: 16;
- color: black;
+ color: #ffffff;
 	margin: 0;
 }
 

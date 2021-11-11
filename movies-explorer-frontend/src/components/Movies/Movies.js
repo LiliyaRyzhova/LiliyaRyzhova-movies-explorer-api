@@ -12,12 +12,12 @@ function Movies(props){
 
 	return(
 		<div className="movies-section">
-			<Header />
-  <SearchForm />
-		<MoviesCardList />
-		<MovieButton />
-		{/* <Preloader /> */}
-		<Footer />
+			<Header color='black'/>
+   <SearchForm />
+		 <MoviesCardList />
+		 <MovieButton />
+		 {/* <Preloader /> */}
+		 <Footer />
 		</div>
 	)
 }

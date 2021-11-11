@@ -1,6 +1,6 @@
 .header{
 	background-color: #ffffff;
-	max-width: 1440px;
+	max-width: 100%;
 	margin: auto;
 }
 
@@ -8,7 +8,11 @@
 	  background-color: #073042;
 }
 
-@media screen and (max-width: 768px){
+.header_black{
+	background-color: #202020;
+}
+
+/* @media screen and (max-width: 768px){
 	.header{
 		max-width: 708px;
 	}
@@ -18,4 +22,4 @@
 	.header{
 		max-width: 300px;
 	}
-}
+} */

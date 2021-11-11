@@ -2,6 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	align-content: center;
+	background-color: #202020;
+	color:#ffffff;
 }
 
 .no-page__header{
@@ -25,6 +27,7 @@
 	line-height: 17px;
 	color: #3456F3;
 	text-align: center;
+	height: 30vh;
 }
 
 .no-page__link:hover{

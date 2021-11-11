@@ -2,10 +2,11 @@
 	width: 100%;
 	margin: auto;
 	padding: 110px 0 0 0;
+	background-color: #202020;
 }
 
 .title__theme_grey{
-	background-color:#F5F5F5;
+	background-color:#272727;
 	;
 }
 
@@ -15,9 +16,10 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 26,63px;
+	color: #ffffff;
 	padding-bottom: 23px;
 	margin: auto;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #DADADA;
 	text-align: left;
 	}
 

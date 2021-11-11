@@ -1,16 +1,25 @@
 .about{
-	max-width: 1140px;
-	margin: auto;
+	width: 100%;
+	height: fit-content;
  padding: 70px 0 110px 0;
+	background-color: #202020;
+	margin: auto;
 }
 
 .about__container{
+ max-width: 1140px;
+ margin: auto;
+}
+
+.about__container-info{
+	max-width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	color: #ffffff;
 }
 
-.about__container-part{
+.about__column{
 	max-width: 550px;
 }
 
@@ -46,7 +55,7 @@
 	.about__rectangle-2{
 	width: 80%;
 	height: 36px;
-	background-color: #F2F2F2;
+	background-color: #303030;
 	margin: 0;
 	padding: 0;
 	}
@@ -58,6 +67,10 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 17px;
+}
+
+.about__text_white{
+	color: #ffffff;
 }
 
 .about__captions{
@@ -72,7 +85,7 @@
 	font-size:14px;
 	font-weight: 400;
 	line-height: 17px;
-	color: #A0A0A0;
+	color: #8B8B8B;
 	margin: 0;
 	padding: 0;
 	text-align: center;

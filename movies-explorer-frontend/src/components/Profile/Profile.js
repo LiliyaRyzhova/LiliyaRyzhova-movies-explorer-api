@@ -7,7 +7,7 @@ function Profile(props){
 
 	return(
   <section className="profile">
-			 <Header />
+			 <Header color='black'/>
 				<div className="profile__info-block">
 					 <p className="profile__greeting">Привет, Виталий!</p>
 						<form className="profile__form">

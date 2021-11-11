@@ -1,9 +1,14 @@
+.sign-in{
+	background-color: #202020;
+	height: 100vh;
+}
+
 .sign-in__button{
 	border-style: none;
 	border-radius: 3px;
 	width: 396px;
 	height: 45px;
-	background-color: #3456F3;
+	background-color: #4285F4;
 	color: #ffffff;
 	font-size: 14px;
 	font-weight: 400;

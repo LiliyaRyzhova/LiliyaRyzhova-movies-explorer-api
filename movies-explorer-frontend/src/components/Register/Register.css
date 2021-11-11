@@ -1,3 +1,8 @@
+.sign-up{
+	background-color: #202020;
+	height: 100vh;
+}
+
 .sign-up__erorr-field{
 	font-size: 10px;
 	font-weight: 400;
@@ -10,7 +15,7 @@
 	border-radius: 3px;
 	width: 396px;
 	height: 45px;
-	background-color: #3456F3;
+	background-color: #4285F4;
 	color: #ffffff;
 	font-size: 14px;
 	font-weight: 400;

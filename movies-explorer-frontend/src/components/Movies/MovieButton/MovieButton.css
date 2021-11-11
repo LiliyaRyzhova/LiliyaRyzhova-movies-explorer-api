@@ -1,13 +1,14 @@
 .more-movie-button{
-	width: 100%;
+	width: 320px;
 	height: 36px;
 	border-style: none;
 	border-radius: 6px;
-	background-color: #F9F9F9;
+	background-color: #424242;
+	color: #ffffff;
 	font-size: 12px;
 	font-weight: 400;
 	font-style: normal;
-	margin: 61px 0 89px 0;
+	margin: 50px auto 80px;
 	transition: opacity .1s ease-in-out;
 }
 

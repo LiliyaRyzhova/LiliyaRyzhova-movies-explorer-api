@@ -1,9 +1,7 @@
 .navigation {
 	width: 100%;
 	height: 66px;
-	background: #000000;
-	border: 1px solid #000000;
-
+	background: #272727;
 }
 
 .navigation__list{
@@ -13,6 +11,8 @@
 	list-style: none;
 	justify-content: center;
 	align-content: center;
+	margin: 0;
+	padding-top: 24px;
 }
 
 .navigation__link{

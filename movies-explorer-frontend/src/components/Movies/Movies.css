@@ -1,6 +1,9 @@
 .movies-section{
-	max-width: 1140px;
+	width:100%;
 	margin: auto;
+	background-color: #202020;
+	display: flex;
+	flex-direction: column;
 }
 
 @media screen and (max-width: 768px){
