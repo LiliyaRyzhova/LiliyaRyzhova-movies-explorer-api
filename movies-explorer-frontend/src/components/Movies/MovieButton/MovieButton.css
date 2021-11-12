@@ -2,8 +2,9 @@
 	width: 320px;
 	height: 36px;
 	border-style: none;
+	border: 1px solid #424242;
 	border-radius: 6px;
-	background-color: #424242;
+	background-color: transparent;
 	color: #ffffff;
 	font-size: 12px;
 	font-weight: 400;
@@ -15,4 +16,10 @@
 .more-movie-button:hover{
 	cursor: pointer;
 	opacity: 0.8;
+}
+
+@media screen and (max-width: 320px){
+ .more-movie-button{
+		width: 240px;
+	}
 }

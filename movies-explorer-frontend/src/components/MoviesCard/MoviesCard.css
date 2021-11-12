@@ -15,6 +15,7 @@
 	height: 151px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	object-fit: cover;
 }
 
 .card__info{
@@ -40,10 +41,12 @@
 .card__button{
 	border-style: none;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size:auto;
 	background-color: transparent;
+	background-position: center;
 	width: 16px;
-	height: 16px;
+	height: 22px;
+	padding: 0;
 	margin: 0;
 	transition: opacity .3s ease-in-out;
 	margin-right: 12px;
@@ -53,8 +56,10 @@
 	background-image: url(../../images/save.svg);
 }
 
-.card__button_save:hover{
+.card__button:hover{
 	cursor: pointer;
+	transition: opacity .3s ease-in-out;
+	opacity: 0.8;
 }
 
 .card__button_save_active{
@@ -86,11 +91,19 @@
 @media screen and (max-width: 768px){
 	.card{
 		width: 339px;
+		height: 257px;
+	}
+	.card__film-image{
+		height: 190px;
 	}
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 708px){
 	.card{
 		width: 300px;
+		height: 235px;
+	}
+	.card__film-image{
+		height: 168px;
 	}
 }

@@ -11,7 +11,8 @@ function SearchForm(props){
 					 <input className="search_input"
 						type="search"
 						aria-label="Поле поиска по каталогу фильмов"
-						placeholder="Фильм" ></input>
+						placeholder="Фильм" 
+						required="true"></input>
 						<button className="search__button" type="submit"></button>
 						</div>
 						<div className="search__checkbox">

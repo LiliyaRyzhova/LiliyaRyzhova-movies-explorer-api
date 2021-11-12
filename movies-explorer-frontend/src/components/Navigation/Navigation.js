@@ -75,7 +75,7 @@ function Navigation(props){
 {location.pathname === "/" && (			  
      <>
 					<img className="header-navigation__logo" src={logo2} alt='логотип' />
-					<nav className="header-navigation__menu">
+					<nav className="header-navigation__menu_start-page">
 						 <Link to="/signup" className="header-navigation__registration-button">Регистрация</Link>
 							<Link to="/signin"><button className="header-navigation__entrance-button">Вход</button></Link>
 					</nav>

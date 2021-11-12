@@ -113,12 +113,12 @@
 	}
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 708px){
 	.about{
 		max-width: 284px;
 		padding: 60px 0 69px 0;
 	}
-	.about__container{
+	.about__container-info{
 		flex-direction: column;
 	}
 	.about__container-part{

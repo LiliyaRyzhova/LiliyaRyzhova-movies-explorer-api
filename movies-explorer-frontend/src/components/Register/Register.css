@@ -30,7 +30,7 @@
 	transition: opacity .3s ease-in-out;
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 400px){
  .sign-up__button{
 		width: 260px;
 	}

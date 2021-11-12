@@ -1,12 +1,12 @@
 .header-navigation{
 	background-color: transparent;
-	max-width: 1140px;
+	width: 1140px;
 	height: 74px;
 	margin: auto;
 }
 
 .header-navigtion__container{
-	max-width: 1140px;
+	/* max-width: 1440px; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -21,6 +21,10 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.header-navigation__menu_start-page{
+	width: 183px;
 }
 
 .header-navigation__logo{
@@ -74,7 +78,7 @@
 	border-radius: 40px;
 	box-shadow: 0px 3px 14px 0px #00000014;
 	border: none;
-	margin-left: 706px;
+	/* margin-left: 706px; */
 	}
 
 	.header-navigation__registration-button{
@@ -134,10 +138,17 @@
 		transition: opacity .3s ease-in-out;
 	}
 
-
+@media screen and (max-width: 1140px){
+ .header-navigation{
+		width: 100%;
+	}
+	.header-navigation__profile{
+		margin-left: 40px;
+	}
+}
 	@media screen and (max-width: 768px){
 		.header-navigation{
-			max-width: 708px;
+			width: 708px;
 		}
 		.header-navigation__menu{
 			display: none;
@@ -147,9 +158,9 @@
 		}
 	}
 
-	@media screen and (max-width: 320px){
+	@media screen and (max-width: 708px){
 		.header-navigation{
-			max-width: 292px;
+			width: 292px;
 		}
 	}
 

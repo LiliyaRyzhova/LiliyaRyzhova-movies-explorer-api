@@ -39,21 +39,21 @@
 	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 708px) {
 	.promo{
 		padding-top: 142px ;
 		padding-bottom: 180px;
 	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 708px) {
 	.promo__logo{
  width: 248px;
 	height: 248px;
 	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 708px) {
 	.promo__header{
  max-width: 300px;
 	font-size: 31px;
