@@ -1,0 +1,37 @@
+.sign-up{
+	background-color: #202020;
+	height: 100vh;
+}
+
+.sign-up__erorr-field{
+	font-size: 10px;
+	font-weight: 400;
+ color: #FF3055;
+ text-align: left;
+}
+
+.sign-up__button{
+	border-style: none;
+	border-radius: 3px;
+	width: 396px;
+	height: 45px;
+	background-color: #4285F4;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center;
+	margin: 69px 0 16px 0;
+	transition: opacity .3s ease-in-out;
+}
+
+.sign-up__button:hover{
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity .3s ease-in-out;
+}
+
+@media screen and (max-width: 400px){
+ .sign-up__button{
+		width: 260px;
+	}
+}

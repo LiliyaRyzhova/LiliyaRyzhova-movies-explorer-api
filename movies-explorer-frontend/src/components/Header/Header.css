@@ -1,0 +1,25 @@
+.header{
+	background-color: #ffffff;
+	max-width: 100%;
+	margin: auto;
+}
+
+.header_green{
+	  background-color: #073042;
+}
+
+.header_black{
+	background-color: #202020;
+}
+
+/* @media screen and (max-width: 768px){
+	.header{
+		max-width: 708px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.header{
+		max-width: 300px;
+	}
+} */

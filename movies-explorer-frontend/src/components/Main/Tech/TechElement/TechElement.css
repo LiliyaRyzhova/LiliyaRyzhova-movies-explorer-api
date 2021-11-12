@@ -1,0 +1,27 @@
+.tech-element__rectangle{
+	width: 90px;
+	height: 60px;
+	border-radius: 10px;
+	background-color: #303030;
+	display: flex;
+	justify-content: center;
+}
+
+.tech-element__header {
+	font-size: 14px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 17px;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.tech-element__rectangle{
+		width: 84px;
+		height: 57px;
+	}
+	.tech-element__header{
+		font-size: 12px;
+		line-height: 14,5px;
+	}
+}
