@@ -5,7 +5,7 @@ import SearchForm from './SearchForm/SearchForm';
 // import MoviesCard from '../MoviesCard/MoviesCard';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
-import MovieButton from './MovieButton/MovieButton';
+// import MovieButton from '../MovieButton/MovieButton';
 // import Preloader from '../Preloader/Preloader';
 
 function Movies(props){
@@ -13,9 +13,17 @@ function Movies(props){
 	return(
 		<div className="movies-section">
 			<Header color='black'/>
-   <SearchForm />
-		 <MoviesCardList />
-		 <MovieButton />
+			<SearchForm onGetMovies={props.onGetMovies} onFilter={props.onFilter}/>
+				<MoviesCardList
+				  movies={props.movie}
+						onGetMovies={props.onGetMovies}
+						onAddMovie={props.onAddMovie}
+						likedMovies={props.likedMovies}
+						savedMovies={props.savedMovies}
+						isSaved={props.isSaved}
+						message={props.message}
+						/>
+		 {/* <MovieButton /> */}
 		 {/* <Preloader /> */}
 		 <Footer />
 		</div>

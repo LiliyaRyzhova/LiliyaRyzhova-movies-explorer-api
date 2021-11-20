@@ -10,7 +10,7 @@ function StartPage(props) {
   return (
     <main className="start-page">
       <div className="start-page__content">
-        <img className="start-page__logo" src={ logo } alt="логотип" />
+        <Link to="/"><img className="start-page__logo" src={ logo } alt="логотип" /></Link>
         <h1 className="start-page__title">
           {location.pathname === '/signup' ? 'Добро пожаловать!' : 'Рады видеть!'}
         </h1>

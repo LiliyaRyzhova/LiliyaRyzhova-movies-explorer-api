@@ -13,7 +13,7 @@
 	font-size: 14px;
 	font-weight: 400;
 	text-align: center;
-	margin: 179px 0 16px 0;
+	margin: 10px 0 16px 0;
 	transition: opacity .3s ease-in-out;
 }
 
@@ -21,6 +21,27 @@
 	cursor: pointer;
 	opacity: 0.8;
 	transition: opacity .3s ease-in-out;
+}
+.sign-in_button_disable{
+	background-color: #F8F8F8;
+	color: #C2C2C2;
+}
+
+.sign-in__err{
+	font-size: 10px;
+	font-weight: 400;
+ color: #FF3055;
+	text-align: center;
+	margin: 0;
+	margin-top: 179px;
+
+}
+
+.sign-in__erorr-field{
+	font-size: 10px;
+	font-weight: 400;
+ color: #FF3055;
+ text-align: left;
 }
 
 @media screen and (max-width: 400px){

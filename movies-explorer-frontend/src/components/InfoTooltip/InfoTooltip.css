@@ -1,0 +1,83 @@
+.infoTooltip{
+	width: 100%;
+ height: 100%;
+	background-color:black;
+	position: absolute;
+	z-index: 1;
+	visibility: hidden;
+}
+
+.infoTooltip_overlay{
+	width: 100%;
+ height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.infoTooltip_conteiner{
+	width: 430px;
+	height: 330px;
+	border-radius: 10px;
+	background-color: white;
+	display:flex;
+	flex-direction: column;
+	margin: 195px auto;
+	position: relative;
+	z-index: 3;
+
+}
+
+.infoTooltip_header{
+	font-size: 24px;
+	width: 358px;
+	text-align: center;
+	margin: 0 auto 0;
+}
+
+.infoTooltip__close-button{
+	width: 32px;
+	height: 32px;
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	outline: none;
+	cursor: pointer;
+	background-image: url(../../images/close.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.infoTooltip__close-button:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.infoTooltip_image__success{
+	width: 120px;
+	height: 120px;
+ background-image: url(../../images/success.svg);
+	margin: 60px auto 32px;
+	border: none;
+	outline: none;
+}
+
+.infoTooltip_image__fail{
+	width: 120px;
+	height: 120px;
+ background-image: url(../../images/fail.svg);
+	margin: 60px auto 32px;
+	border: none;
+	outline: none;
+}
+
+.infoTooltip_opened{
+	visibility: visible;
+}
+

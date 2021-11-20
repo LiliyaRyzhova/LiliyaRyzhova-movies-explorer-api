@@ -14,7 +14,7 @@ function Main(props){
 
 	return(
 		<div className="main">
-		 	<Header color="green"/>
+		 	<Header color="green" loggedIn={props.loggedIn}/>
 			 <Promo />
 				<NavTab />
 				<Title title ="О проекте" />

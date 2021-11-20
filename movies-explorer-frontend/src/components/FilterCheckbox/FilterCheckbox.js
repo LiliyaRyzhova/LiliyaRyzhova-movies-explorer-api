@@ -10,6 +10,8 @@ function FilterCheckbox(props) {
         type="checkbox"
         name="short-film"
         id="checkbox"
+        onChange={props.onFilter}
+        checked={props.isShortMovie}
       />
       <span className="filter-checkbox__pseudo-input" />
     </label>

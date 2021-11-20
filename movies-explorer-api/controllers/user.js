@@ -18,7 +18,6 @@ module.exports.createUser = (req, res, next) => {
       email, name, password: hash,
     })
       .then((user) => res.status(200).send({
-        _id: user._id,
         email: user.email,
         name: user.name,
       }))
@@ -38,6 +37,23 @@ module.exports.createUser = (req, res, next) => {
 module.exports.getUser = (req, res, next) => {
   User.find({})
     .then((users) => res.status(200).send(users))
+    .catch(next);
+};
+
+module.exports.getCurrentUser = (req, res, next) => {
+  User.findById(req.params.userId)
+    .then((user) => {
+      if (!user) {
+        throw new ValidationError('Пользователь по указанному _id не найден.');
+      } else {
+        res.status(200).send({ data: user });
+      }
+    })
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        throw new ValidationError('Невалидный id ');
+      }
+    })
     .catch(next);
 };
 

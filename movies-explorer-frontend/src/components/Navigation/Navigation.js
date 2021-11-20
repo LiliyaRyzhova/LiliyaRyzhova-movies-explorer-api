@@ -6,7 +6,7 @@ import './Navigation.css';
 import NavigationSideMenu from './NavigationSideMenu/NavigationSideMenu';
 
 function Navigation(props){
-
+console.log(props)
 	const [isOpen, setIsOpen] = React.useState(false);
 	const location = useLocation();
 
@@ -23,7 +23,7 @@ function Navigation(props){
 			  <div className="header-navigtion__container">
 {location.pathname === '/movies' && (			
      <>
-     <img className="header-navigation__logo" src={logo1} alt='логотип' />
+     <Link to="/"><img className="header-navigation__logo" src={logo1} alt='логотип' /></Link>
 				 <nav className="header-navigation__menu">
 								<div className="header-navigation__menu">
 								<ul className="header-navigation__list">
@@ -40,7 +40,7 @@ function Navigation(props){
 					</>)}
 					{location.pathname === '/saved-movies' && (			
      <>
-     <img className="header-navigation__logo" src={logo1} alt='логотип' />
+     <Link to="/"><img className="header-navigation__logo" src={logo1} alt='логотип' /></Link>
 				 <nav className="header-navigation__menu">
 								<div className="header-navigation__menu">
 								<ul className="header-navigation__list">
@@ -57,7 +57,7 @@ function Navigation(props){
 					</>)}
 					{location.pathname === '/profile' && (			
      <>
-     <img className="header-navigation__logo" src={logo1} alt='логотип' />
+     <Link to="/"><img className="header-navigation__logo" src={logo1} alt='логотип' /></Link>
 				 <nav className="header-navigation__menu">
 								<div className="header-navigation__menu">
 								<ul className="header-navigation__list">
@@ -72,12 +72,28 @@ function Navigation(props){
 					</nav>
 					<NavigationSideMenu isOpen={isOpen} onClose={handleCloseMenu}/>
 					</>)}
-{location.pathname === "/" && (			  
+{location.pathname === "/"  &&  props.loggedIn === false &&(	 		  
      <>
-					<img className="header-navigation__logo" src={logo2} alt='логотип' />
+					<Link to="/"><img className="header-navigation__logo" src={logo2} alt='логотип' /></Link>
 					<nav className="header-navigation__menu_start-page">
 						 <Link to="/signup" className="header-navigation__registration-button">Регистрация</Link>
 							<Link to="/signin"><button className="header-navigation__entrance-button">Вход</button></Link>
+					</nav>
+					</>)}
+					{location.pathname === "/"  &&  props.loggedIn === true &&(	 		  
+     <>
+					<Link to="/"><img className="header-navigation__logo" src={logo2} alt='логотип' /></Link>
+					<nav className="header-navigation__menu">
+								<div className="header-navigation__menu">
+								<ul className="header-navigation__list">
+								  <li className="header-navigation__link-item"><NavLink exact="true" to="/movies" className="header-navigation__link" activeClassName="header-navigation__link_active" >Фильмы</NavLink></li>
+										<li className="header-navigation__link-item"><NavLink to="/saved-movies" className="header-navigation__link" activeClassName="header-navigation__link_active" >Сохранённые фильмы</NavLink></li>
+								</ul>
+								<Link to="/profile" className="header-navigation__profile"></Link>
+       </div>
+					</nav>
+					<nav className="header-navigation__menu_burger">
+						 <button className="header-navigation__menu-button" type="button" onClick={handleOpenMenu}></button>
 					</nav>
 					</>)}
 					

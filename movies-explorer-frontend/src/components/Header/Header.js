@@ -8,7 +8,7 @@ function Header(props){
 
 	return(
 	  <section className={`header header_${props.color}`}>
-     <Navigation/>
+     <Navigation loggedIn={props.loggedIn}/>
 					<NavigationSideMenu />
 	  </section>
 	)
