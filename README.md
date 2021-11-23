@@ -1,4 +1,5 @@
 # LiliyaRyzhova-movies-explorer-api
 
+Ссылка на сайт: https://movie.rls.nomoredomains.rocks/
 Ссылка на домен сервера: http://api.movie.nomoredomains.monster
-IP адрес сервера: 178.154.199.240
+IP адрес сервера: 51.250.26.162
