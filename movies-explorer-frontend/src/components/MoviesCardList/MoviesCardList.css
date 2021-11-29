@@ -1,0 +1,44 @@
+.movies{
+	width: 100%;
+	min-height: 220px;
+	margin-top: 80px;
+}
+
+.movies__list{
+	max-width: 1140px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	/* grid-template-rows: repeat(4, 1fr); */
+	gap: 38px 20px;
+	margin: auto;
+}
+
+.movies-message{
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+ opacity: 0.8;
+}
+
+@media screen and (max-width: 768px){
+	.movies{
+		margin-top: 70px;
+		min-height: 490px;
+	}
+	.movies__list{
+		max-width: 708px;
+		gap: 30px 30px;
+	}
+}
+
+@media screen and (max-width: 708px){
+	.movies{
+		margin-top: 40px;
+		min-height: 200px;
+	}
+	.movies__list{
+		max-width: 300px;
+		gap: 34px;
+	}
+}
