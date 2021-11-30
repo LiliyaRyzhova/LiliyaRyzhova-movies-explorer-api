@@ -1,15 +1,17 @@
 import React, { Suspense } from "react";
 import './MoviesCardList.css';
-import { useLocation } from 'react-router-dom';
-import MoviesCard from '../MoviesCard/MoviesCard';
+// import { useLocation } from 'react-router-dom';
+// import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../Preloader/Preloader';
 import MovieButton from '../MovieButton/MovieButton';
 import { moviesMinLenght, movieMaxLenght } from '../../utils/consts';
+const MoviesCard = React.lazy(() => import("../MoviesCard/MoviesCard")); // Ленивая загрузка
 
 function MoviesCardList(props) {
 
   const [counter, setCounter] = React.useState(4);
-  const location = useLocation();
+  console.log(props.movies.length)
+  // const location = useLocation();
 
   function showMoreMovies() {
     setCounter(counter + 4);
@@ -19,7 +21,7 @@ function MoviesCardList(props) {
     <>
       <section className="movies">
         <div className="movies__list">
-          {location.pathname === '/movies' && (<Suspense fallback={<Preloader />}>
+          <Suspense fallback={<Preloader />}>
             {props.message ? (
               <p className="movies-message">{props.message}</p>
             ) : (
@@ -42,8 +44,8 @@ function MoviesCardList(props) {
                   />
                 ))
             )}
-          </Suspense>)}
-          {location.pathname === '/saved-movies' && (props.movies.map((movie, id) => {
+          </Suspense>
+          {/* {location.pathname === '/saved-movies' && (props.movies.map((movie, id) => {
             return (
               <MoviesCard
               movie={movie}
@@ -59,13 +61,13 @@ function MoviesCardList(props) {
               likedMovies={props.likedMovies}
               isLiked={props.isLiked}
               />)
-          }))}
+          }))} */}
         </div>
 
       </section>
-      {location.pathname === '/movies' &&
-        props.movies.length >= moviesMinLenght &&
-        props.movies.length > counter &&
+      
+      { props.movies.length >= moviesMinLenght &&
+        // props.movies.length > counter &&
         props.movies.length <= movieMaxLenght &&
         !props.message ? (
         <MovieButton showMoreMovies={showMoreMovies} />

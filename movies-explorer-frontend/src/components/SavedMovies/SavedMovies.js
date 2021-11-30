@@ -12,7 +12,7 @@ console.log(props)
 	return(
    <section className="saved-movies">
 				<Header color='black'/>
-   <SearchForm onGetMovies={props.onGetMovies} onFilter={props.onFilter}/>
+   <SearchForm onGetMovies={props.onGetMovies} onFilter={props.onFilter} checkBoxStatus={props.checkBoxStatus}/>
 				<MoviesCardList
 				  movies={props.movie}
 						onGetMovies={props.onGetMovies}

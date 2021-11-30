@@ -6,7 +6,7 @@ function FilterCheckbox(props) {
     <label className="filter-checkbox" htmlFor="checkbox">
       <input
         className="filter-checkbox__input"
-        defaultChecked={false}
+        defaultChecked={props.checkBoxStatus}
         type="checkbox"
         name="short-film"
         id="checkbox"

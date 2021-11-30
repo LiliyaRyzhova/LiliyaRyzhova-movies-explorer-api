@@ -22,7 +22,7 @@ function SearchForm(props){
     e.preventDefault();
     setError("");
     props.onGetMovies(findedMovie);
-    setFindedMovie("");
+    // setFindedMovie("");
   }
 
   React.useEffect(() => {
@@ -44,12 +44,12 @@ function SearchForm(props){
 						required={true}
 						value={findedMovie}
 						onChange={handleSearchMovie}></input>
-						<button className="search__button" type="submit" onClick={handleSubmit} disabled={!formValid}></button>
+						<button className="search__button" type="submit" onClick={handleSubmit}></button>
 						</div>
 						<div className="search__checkbox">
 							 <p className="search__checkbox-name">Короткометражки</p>
 								{/* <input className="search__checkbox-input" type="checkbox"></input> */}
-								<FilterCheckbox onFilter={props.onFilter}/>
+								<FilterCheckbox onFilter={props.onFilter} checkBoxStatus={props.checkBoxStatus}/>
 						</div>
 				</form>
 		</div>

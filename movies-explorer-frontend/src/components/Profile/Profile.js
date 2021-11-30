@@ -54,7 +54,7 @@ if (!validEmail) {
 				email
   });
 		// setameIsChanged(true)
-		setEditingMode(false)
+		setEditingMode(false);
 } 
 
 	React.useEffect(() => {
@@ -88,7 +88,7 @@ console.log(currentUser)
 				<div className="profile__info-block">
 					 {/* {nameIsChanged === false &&(<p className="profile__greeting">{`Привет, ${currentUser.name}!`}</p>)} */}
 						<p className="profile__greeting">{`Привет, ${currentUser.name}!`}</p>
-						<form className="profile__form" onSubmit={handleSubmit}>
+						<form className="profile__form" onSubmit={handleSubmit} id="profile__form">
 							<div className="profile__form-item">
 							 <span className="profile__input-title">Имя</span>
 							 {editingMode === false && (<input className="profile__input" type="text" name="name" value={currentUser.name} placeholder={currentUser.name} onChange={handleNameChange} disabled/>)}
@@ -101,12 +101,12 @@ console.log(currentUser)
 								{editingMode === true && (<input className="profile__input" type="text" name="email" value={email} placeholder={currentUser.email} onChange={handleEmailChange}/>)}
 								</div>
 								<p className="profile__input-err">{emailError}</p>
-								{editingMode === true &&(<div className="profile__err-message">{props.message}</div>)}
-								{ editingMode === false && (<button className="profile__button profile__button_edit" type="button" onClick={handleEditingModeOn}>Редактировать</button>)}
+			     <div className={`profile__err-message profile__err-message_${props.message === "Данные изменены" ? "success" : ""} `}>{props.message}</div>
+								{ editingMode === false && (<button className="profile__button profile__button_edit" type="button" onClick={handleEditingModeOn} >Редактировать</button>)}
 								{ editingMode === true &&(<button className={`profile__button profile__button_save-change ${ !formValid ? "profile__button_save-change_disable" : ""}`}
 								type="submit" disabled={!formValid}>Сохранить</button>)}
 						</form>
-						{ editingMode === false && (<Link to="/signin" className="profile__button profile__button_exit" onClick={props.onLogout}>Выйти из аккаунта</Link>)}
+						{ editingMode === false && (<Link to="/" className="profile__button profile__button_exit" onClick={props.onLogout}>Выйти из аккаунта</Link>)}
 				</div>
 		</section>
 	)

@@ -105,7 +105,7 @@
 }
 
 .profile__button_edit{
-	margin-top: 220px;
+	margin-top: 20px;
 	color: #ffffff;
 }
 
@@ -121,6 +121,11 @@
 	font-size: 11px;
 	color: #FF004C;
 	text-align: center;
+}
+
+.profile__err-message_success{
+	color: #3DDC84;
+
 }
 
 @media screen and (max-width: 768px){

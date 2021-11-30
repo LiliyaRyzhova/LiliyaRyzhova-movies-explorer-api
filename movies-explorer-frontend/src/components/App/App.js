@@ -23,8 +23,9 @@ function App() {
   const [moviesMessage, setMoviesMessage] = React.useState("");
   const [messageRegErr, setMessageRegErr] = React.useState("");
   const [messageLogErr, setMessageLogErr] = React.useState("");
-  const [messageProfileErr, setMessageProfileErr] = React.useState("");
+  const [messageProfile, setMessageProfile] = React.useState("");
   const [userMovies, setUserMovies] = React.useState([]);
+  const [currentUserFilms, setCurrentUserFilms] = React.useState([])
   const [shortMovies, setShortMovies] = React.useState(false);
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
@@ -38,6 +39,10 @@ function App() {
   const [isInfoToolTipNotificationOpen, setIsInfoToolTipNotificationOpen] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
   const history = useHistory();
+
+  React.useEffect(() => {
+    handleTokenCheck();
+  }, [])
 
   React.useEffect(() => {
     Promise.all([
@@ -57,7 +62,6 @@ function App() {
   }, []
   )
   console.log(currentUser)
-
 
   //регистрация
 
@@ -128,7 +132,8 @@ function App() {
   //logout
 
   function handleLogOute() {
-    logOut()
+    logOut();
+    setState(false);
     localStorage.clear();
   }
 
@@ -142,16 +147,25 @@ function App() {
           name: userData.name,
           email: userData.email,
         })
+        setMessageProfile("Данные изменены")
+        setTimeout(cleanMessage, 5000)
         closeAllPopups()
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
         if (err.status === 409) {
-          setMessageProfileErr("Пользователь с таким email уже существует");
+          setMessageProfile("Пользователь с таким email уже существует");
+          setTimeout(cleanMessage, 5000)
+          
         } else {
-          setMessageProfileErr("При изменении данных профиля произошла ошибка");
+          setMessageProfile("При изменении данных профиля произошла ошибка");
+          setTimeout(cleanMessage, 5000)
         }
       })
+  }
+
+  function cleanMessage() {
+    setMessageProfile("")
   }
 
   //получаем все фильмы и сохраняем в локальное хранилище
@@ -173,6 +187,9 @@ function App() {
   function handleGetMovies(keyword) {
     setMoviesMessage("");
     const key = new RegExp(keyword, "gi");
+    if (keyword === ""){
+      setMoviesMessage("Нужно ввести ключевое слово")
+    } else {
     const findedMovies = movies.filter(
       (item) => key.test(item.nameRU) || key.test(item.nameEN)
     );
@@ -188,13 +205,14 @@ function App() {
       });
       setSortedMovies(checkedLikes);
       localStorage.setItem("sortedMovies", JSON.stringify(findedMovies));
-    }
+    }}
   }
 
   //обработка чек-бокс фильтра
 
   function handleCheckBox() {
     setShortMovies(!shortMovies);
+    localStorage.setItem("chekBoxCondition", JSON.stringify(shortMovies) )
   }
 
   //чек-бокс фильтр - корометражки - фильмы с макс продолжительностью 40 мин.
@@ -212,6 +230,9 @@ function App() {
   function handleGetSavedMovies(keyword) {
     setMoviesMessage("");
     const key = new RegExp(keyword, "gi");
+    if (keyword === "") {
+      setMoviesMessage("Нужно ввести ключевое слово")
+    } else {
     const findedMovies = userMovies.filter(
       (item) => key.test(item.nameRU) || key.test(item.nameEN)
     );
@@ -221,7 +242,7 @@ function App() {
       setMoviesMessage("");
       setUserMovies(findedMovies);
     }
-  }
+  }}
 
   // обработка изменения кнопки лайк-сохранить
 
@@ -295,9 +316,10 @@ function App() {
     return (movie.isSaved = userMovies.some(userMovie => userMovie.movieId === movie.id && userMovie.owner === currentUser._id));
   }
 
-  React.useEffect(() => {
-    handleTokenCheck();
-  }, [])
+
+  // React.useEffect(() => {
+  //   handleTokenCheck();
+  // }, [])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -318,6 +340,7 @@ function App() {
             likedMovies={checkSavedMovie}
             message={moviesMessage}
             isLiked={isLiked}
+            checkBoxStatus={shortMovies}
           // isSaved={isSaved}
           />
           <ProtectedRoute
@@ -331,8 +354,9 @@ function App() {
             onDelete={handleMovieDeleteButton}
             likedMovies={checkSavedMovie}
             message={moviesMessage}
+            checkBoxStatus={shortMovies}
           />
-          <ProtectedRoute path="/profile" component={Profile} loggedIn={loggedIn} message={messageProfileErr} onLogout={handleLogOute} onUpdateUserData={handleUpdateUserData} />
+          <ProtectedRoute path="/profile" component={Profile} loggedIn={loggedIn} message={messageProfile} onLogout={handleLogOute} onUpdateUserData={handleUpdateUserData} />
           <Route path="*"> <PageNotFound /> </Route>
         </Switch>
       </div>
